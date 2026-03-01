@@ -15,6 +15,21 @@ let questions = [
         correct: 8,
         answers: [1, 4, 6, 8, 10]
     },
+    {
+        question: "В каком году был создан СССР?",
+        correct: 1922,
+        answers: [1920, 1922, 1924, 1926]
+    },
+    {
+        question: "Кто написал 'Войну и мир'?",
+        correct: "Л.Н.Толстой",
+        answers: ["Л.Н.Толстой", "Ф.М.Достоевский", "Н.А.Некрасов", "Н.В.Гоголь"]
+    },
+    {
+        question: "Кто президент РФ?",
+        correct: "В.В.Путин",
+        answers: ["Б.Н.Ельцин", "Д.А.Медведев", "С.В.Лавров", "В.В.Путин"]
+    },
 ];
 
 function startProgram () {
@@ -45,5 +60,19 @@ function check(answer) {
         count += 1;
     }
     current += 1;
-    generate()
+    if (questions.length > current) {
+        generate()
+    } else {
+        stop()
+    }
+}
+
+function stop() {
+    start.classList.remove("close");
+    main.classList.add("close");
+    result.classList.remove("close");
+
+    result.innerHTML = `Решено ${count} из ${questions.length}`
+    current = 0;
+    count = 0;
 }
