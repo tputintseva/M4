@@ -12,29 +12,32 @@
 </head>
 <body>
    <label>
-    <input placeholder="Введите логин">
-    <button>Найти</button>
+    <input placeholder="Введите логин" id="searchValue">
+    <button id="searchBtn">Найти</button>
    </label> 
 
-   <div>
+   <div id="card" class="none">
     <img src="https://avatars.githubusercontent.com/u/63047682?v=4"/>
     <h1>Логин</h1>
     <p>Описание</p>
     <nav>
         <div>
-            <i class="fas fa-map-marker-alt"></i>
+            <i class="fas fa-map-marker-alt" style="color: yellow;"></i>
             <span>Калининград</span>
         </div>
         <div>
-            <i class="fas fa-book"></i>
+            <i class="fas fa-book" style="color: yellowgreen;"></i>
             <span>10</span>
         </div>
         <div>
-            <i class="fas fa-heart"></i>
+            <i class="fas fa-heart" style="color: red;"></i>
             <span>4</span>
         </div>
     </nav>
     <a href="">Перейти</a>
    </div>
+
+   <div id="load" class="none"></div>
+   <script src="./main.js"></script>
 </body>
 </html>
