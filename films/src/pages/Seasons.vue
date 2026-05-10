@@ -1,5 +1,10 @@
+<script setup>
+import CardSeasons from "../components/CardSeasons.vue"
+</script>
+
+
 <template>
     <section>
-        Части
+        <CardSeasons v-for="i in 5" :key="i"/>
     </section>
 </template>
