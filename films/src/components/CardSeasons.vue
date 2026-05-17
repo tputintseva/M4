@@ -1,15 +1,41 @@
+<script setup>
+defineProps({
+  card: Object,
+})
+</script>
+
 <template>
   <div>
-    <img src="https://ir.ozone.ru/s3/multimedia-1-0/7618836384.jpg" />
+    <img :src="card.img" />
     <nav>
-      <h2>1 сезон</h2>
-      <p>
-        Пятеро молодых людей прыгают в старую «Волгу» и отправляются на поиски
-        вора, часом ранее укравшего из квартиры родителей главного героя восемь
-        миллионов рублей. Грабитель — обычный московский айтишник, — вместо того
-        чтобы залечь на дно, тут же записывает видеоотчет, в котором сообщает,
-        что финальная точка его путешествия — Чернобыльская АЭС и город Припять.
-      </p>
+      <h2>{{ card.title }}</h2>
+      <p>{{ card.desc }}</p>
     </nav>
   </div>
 </template>
+
+<style scoped>
+div {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr 3fr;
+}
+img {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 16px;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+h2 {
+  font-size: 40px;
+}
+p {
+  font-size: 25px;
+  line-height: column;
+  justify-content: space-between;
+}
+</style>
